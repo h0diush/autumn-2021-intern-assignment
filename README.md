@@ -27,6 +27,8 @@
 
 ---
 
+
+
 ### Для запуска проекта:
 
 - Клонировать репозиторий ```https://github.com/h0diush/autumn-2021-intern-assignment.git```
@@ -49,15 +51,15 @@ EMAIL_HOST_PASSWORD=...
 EMAIL_PORT=...
 ```
 #### ***!ВАЖНО!*** Для работы сервиса необходим заранее установленный Docker и docker-compose
-- Запустить контейнер ```docker-compose up -d --build```
-- Посмотреть логи docker’a ```docker-compose logs```
+- Запустить контейнер ```make build```
+- Посмотреть логи docker’a ```make logs```
 - Документация API: 
 >  ```
 > http://localhost:8000/redoc/
 > http://localhost:8000/schema/swagger-ui/
 > ```
-- создать суперпользователя ```docker-compose exec api python manage.py createsuperuser```
-- Заполнить базу данных ```docker-compose exec api python manage.py loaddata data/service.json```
+- создать суперпользователя ```make superuser```
+- Заполнить базу данных ```make db```
 
 
 - Данные для входа администратора сайта: 
@@ -66,7 +68,7 @@ EMAIL_PORT=...
 > password: admin
 >```
 
-- Остановить контейнер ```docker-compose down -v```
+- Остановить контейнер ```dmake down```
 
 ---
 ## Примеры запросов и ответов:
